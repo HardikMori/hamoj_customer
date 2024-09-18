@@ -16,7 +16,7 @@ class DashBoardController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    dashBoardApiCall();
+    // dashBoardApiCall();
   }
   Future<void> dashBoardApiCall({var body}) async {
     try {

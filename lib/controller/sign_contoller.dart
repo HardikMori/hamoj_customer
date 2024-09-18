@@ -48,9 +48,10 @@ class SignInController extends GetxController {
         },
         onError: (errors, statusCode) {
           // if (statusCode == 401) {
-          Utils.getCommonErrorSnackBar(errors.toString(), topPadding: 40);
+          // Utils.getCommonErrorSnackBar(errors.toString(), topPadding: 40);
           // Get.offAllNamed(RouteName.login);
-
+          Utils.getCommonErrorSnackBar('Unknown error occurred',
+              topPadding: 40);
           // }
         },
         onConnectionError: (errors) {

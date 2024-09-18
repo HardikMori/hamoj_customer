@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hamoj/constants.dart';
+import 'package:hamoj/controller/dash_board_controller.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  DashBoardController controller = Get.find();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller.dashBoardApiCall();
+  }
 
   @override
   Widget build(BuildContext context) {
