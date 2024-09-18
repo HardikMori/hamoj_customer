@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hamoj/utils/image_contants.dart';
 
 import '../../components/order_by_component.dart';
 import '../../constants.dart';
@@ -183,7 +184,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                     height: height * 28,
                                     fit: BoxFit.cover,
                                     image: AssetImage(
-                                      teaImageForTable,
+                                      ImageConstants.teaImageForTable,
                                     )),
                               )),
                               DataCell(

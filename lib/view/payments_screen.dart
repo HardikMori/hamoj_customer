@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hamoj/components/order_by_component.dart';
 import 'package:hamoj/constants.dart';
+import 'package:hamoj/utils/image_contants.dart';
 
 class PaymentsScreen extends StatelessWidget {
   const PaymentsScreen({super.key});
@@ -80,7 +81,7 @@ class PaymentsScreen extends StatelessWidget {
                   height: height * 350,
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    qrCodeImage,
+                    ImageConstants.qrCodeImage,
                   ),
                 ),
               ),

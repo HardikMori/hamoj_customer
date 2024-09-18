@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hamoj/constants.dart';
+import 'package:hamoj/utils/image_contants.dart';
+import 'package:hamoj/view/login_screen.dart';
 import 'package:hamoj/view/payments_screen.dart';
 import 'package:hamoj/view/reports_screen.dart';
 
@@ -16,11 +20,13 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int index = 0;
+  var prefData = GetStorage();
+
   List<Widget> screensToShow = [
-    DashboardScreen(),
+    const DashboardScreen(),
     OrdersScreen(),
-    ReportsScreen(),
-    PaymentsScreen(),
+    const ReportsScreen(),
+    const PaymentsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,38 +42,44 @@ class _MainScreenState extends State<MainScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image(
-              image: AssetImage(teaImage),
+              image: const AssetImage(ImageConstants.teaImage),
               width: width * 48,
               fit: BoxFit.cover,
             ),
             Image(
-              image: AssetImage(whiteLogo),
+              image: const AssetImage(ImageConstants.whiteLogo),
               width: width * 88,
               fit: BoxFit.cover,
             ),
           ],
         ),
         actions: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                'Welcome!',
-                style: TextStyle(
-                  fontSize: width * 16,
-                  color: Colors.white,
+          InkWell(
+            onTap: () {
+              prefData.erase();
+              Get.offAll(const LoginScreen());
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'Welcome!',
+                  style: TextStyle(
+                    fontSize: width * 16,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              Text(
-                'Test',
-                style: TextStyle(
-                  fontSize: width * 16,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
+                Text(
+                  'Test',
+                  style: TextStyle(
+                    fontSize: width * 16,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(
             width: width * 8,
@@ -75,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
           Image(
             height: height * 52,
             fit: BoxFit.cover,
-            image: AssetImage(profileImage),
+            image: const AssetImage(ImageConstants.profileImage),
           ),
           SizedBox(
             width: width * 24,

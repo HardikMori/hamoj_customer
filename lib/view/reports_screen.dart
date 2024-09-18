@@ -109,7 +109,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                   // width: double.infinity,
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Color(0xff878787),
+                                        color: const Color(0xff878787),
                                         width: width * 0.5,
                                       ),
                                       borderRadius:
@@ -117,7 +117,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                   child: Center(
                                     child: Text(
                                       _fromDate,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
@@ -160,7 +160,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                   // width: double.infinity,
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Color(0xff878787),
+                                        color: const Color(0xff878787),
                                         width: width * 0.5,
                                       ),
                                       borderRadius:
@@ -168,7 +168,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                   child: Center(
                                     child: Text(
                                       _toDate,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
@@ -213,7 +213,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                               decoration: BoxDecoration(
                                 color: primaryColor,
                                 border: Border.all(
-                                  color: Color(0xff878787).withOpacity(0.5),
+                                  color: const Color(0xff878787).withOpacity(0.5),
                                 ),
                                 borderRadius: BorderRadius.circular(
                                   width * 4,
@@ -242,7 +242,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                               decoration: BoxDecoration(
                                 color: primaryColor,
                                 border: Border.all(
-                                  color: Color(0xff878787).withOpacity(0.5),
+                                  color: const Color(0xff878787).withOpacity(0.5),
                                 ),
                                 borderRadius: BorderRadius.circular(
                                   width * 4,
@@ -272,7 +272,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color(0xff878787),
+                            color: const Color(0xff878787),
                           ),
                         ),
                         child: SingleChildScrollView(
@@ -286,27 +286,27 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                 color: Colors.black,
                               ),
                               dataTextStyle: TextStyle(
-                                color: Color(0xff878787),
+                                color: const Color(0xff878787),
                                 fontSize: width * 14,
                                 fontWeight: FontWeight.w400,
                               ),
                               columns: [
-                                DataColumn(
+                                const DataColumn(
                                   label: Text(
                                     'DATE',
                                   ),
                                 ),
-                                DataColumn(
+                                const DataColumn(
                                   label: Text(
                                     'GRAND TOTAL',
                                   ),
                                 ),
-                                DataColumn(
+                                const DataColumn(
                                   label: Text(
                                     'CONFIRM BY',
                                   ),
                                 ),
-                                DataColumn(
+                                const DataColumn(
                                   label: Text(
                                     'ACTION',
                                   ),
@@ -316,13 +316,13 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                 for (var i = 0; i < 7; i++)
                                   DataRow(
                                     cells: [
-                                      DataCell(
+                                      const DataCell(
                                         Center(child: Text('2024-08-01')),
                                       ),
-                                      DataCell(
+                                      const DataCell(
                                         Center(child: Text('\$100.00')),
                                       ),
-                                      DataCell(
+                                      const DataCell(
                                         Center(child: Text('Yes')),
                                       ),
                                       DataCell(

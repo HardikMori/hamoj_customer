@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hamoj/constants.dart';
+import 'package:hamoj/controller/login_controller.dart';
+import 'package:hamoj/utils/image_contants.dart';
 import 'package:hamoj/view/signup_screen.dart';
 
 import '../components/my_button.dart';
@@ -11,9 +14,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<LoginController>();
+    // final fKey = GlobalKey<FormState>();
     double height = MediaQuery.of(context).size.height / 758;
     double width = MediaQuery.of(context).size.width / 360;
     return Scaffold(
+        resizeToAvoidBottomInset: false,
+
         body: Padding(
       padding:
           EdgeInsets.symmetric(horizontal: width * screenHorizontalPadding),
@@ -42,7 +49,7 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image(
-                  image: AssetImage(pinkLogo),
+                  image: const AssetImage(ImageConstants.pinkLogo),
                   width: width * 140,
                   fit: BoxFit.cover,
                 ),
@@ -58,10 +65,12 @@ class LoginScreen extends StatelessWidget {
                 ),
                 MyTextField(
                   title: 'Mobile Number',
+                  controller: controller.mobileController,
                   textInputType: TextInputType.phone,
                 ),
                 MyTextField(
                   title: 'Password',
+                  controller: controller.pwdController,
                   obscureText: true,
                 ),
                 SizedBox(
@@ -75,10 +84,19 @@ class LoginScreen extends StatelessWidget {
                       child: MyButton(
                         title: 'Login',
                         onTap: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MainScreen()));
+                          controller.loginApiCall(
+                            body: {
+                              "mobileNumber": controller.mobileController.text,
+                              "password": controller.pwdController.text,
+                              "isVendor": true
+                            }
+                          );
+
+
+                          // Navigator.pushReplacement(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => MainScreen()));
                         },
                       ),
                     ),
@@ -89,10 +107,10 @@ class LoginScreen extends StatelessWidget {
                       child: MyButton(
                         title: 'Sign Up',
                         onTap: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => const SignUpScreen(),
                             ),
                           );
                         },

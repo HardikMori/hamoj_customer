@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hamoj/constants.dart';
+import 'package:hamoj/controller/splash_controller.dart';
+import 'package:hamoj/utils/image_contants.dart';
 
 import 'login_screen.dart';
 
@@ -11,19 +14,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+ final  controller = Get.find<SplashController>();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    Future.delayed(Duration(seconds: 1), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginScreen()
-            // LoginScreen(),
-            ),
-      );
-    });
+    controller.routing();
   }
 
   @override
@@ -40,8 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
               Image(
                 height: height * 180,
                 fit: BoxFit.cover,
-                image: AssetImage(
-                  whiteLogo,
+                image: const AssetImage(
+                  ImageConstants.whiteLogo,
                 ),
               ),
             ],
