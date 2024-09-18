@@ -56,8 +56,8 @@ class _MainScreenState extends State<MainScreen> {
         actions: [
           InkWell(
             onTap: () {
-              prefData.erase();
-              Get.offAll(const LoginScreen());
+              // prefData.erase();
+              // Get.offAll(const LoginScreen());
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
